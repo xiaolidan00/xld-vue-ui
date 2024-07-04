@@ -1,0 +1,68 @@
+{
+  "name": "xld-react-ui",
+  "version": "1.0.2",
+  "description": "",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "vite",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "vitest",
+    "test-c": "vitest run --coverage"
+  },
+  "publishConfig": {
+    "@xiaolidan00:register": "https://npm.pkg.github.com/xiaolidan"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "xiaolidan00",
+  "repository": "https://github.com/xiaolidan00/xld-react-ui",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@chromatic-com/storybook": "1.6.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/test": "^8.1.11",
+    "@storybook/vue3": "^8.1.11",
+    "@storybook/vue3-vite": "^8.1.11",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/babel-plugin-jsx": "^1.2.2",
+    "@vue/test-utils": "2.4.0-alpha.2",
+    "@vue/tsconfig": "^0.5.1",
+    "happy-dom": "^14.12.3",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.77.6",
+    "storybook": "^8.1.11",
+    "tslib": "^2.6.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.3",
+    "vite-plugin-sass": "^0.1.0",
+    "vitest": "^1.6.0",
+    "vue": "^3.4.31",
+    "vue-tsc": "^2.0.24"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  }
+}
