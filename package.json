@@ -1,6 +1,6 @@
 {
-  "name": "xld-react-ui",
-  "version": "1.0.2",
+  "name": "xld-vue-ui",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -24,7 +24,7 @@
     "react"
   ],
   "author": "xiaolidan00",
-  "repository": "https://github.com/xiaolidan00/xld-react-ui",
+  "repository": "https://github.com/xiaolidan00/xld-vue-ui",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.7",
