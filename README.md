@@ -323,3 +323,18 @@ packages.json的husky和cz配置
     }
   },
 ```
+
+- commitlint.config.js
+
+```bash
+pnpm add -D @commitlint/cli @commitlint/config-conventional
+pnpm exec commitlint --config commitlint.config.js --edit "${1}"
+```
+
+```js
+export default {
+  extends: ['@commitlint/config-conventional']
+   
+};
+
+```
