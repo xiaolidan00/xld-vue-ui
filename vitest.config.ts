@@ -6,7 +6,7 @@ export default mergeConfig(
     test: {
       include: ['src/tests/*.test.ts'],
       environment: 'happy-dom',
-      reporters: ['html']
+      reporters: ['default']
     }
   })
 );
