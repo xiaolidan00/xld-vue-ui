@@ -1,0 +1,20 @@
+{
+  "eslintIntegration": true,
+  "stylelintIntegration": true,
+  "vueIndentScriptAndStyle": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "none",
+  "importOrder": ["^(vue)$", "^([a-z]|@[a-z])", "", ".*"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

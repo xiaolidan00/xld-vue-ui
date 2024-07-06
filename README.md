@@ -200,3 +200,126 @@ export default mergeConfig(
 );
 
 ```
+
+# 4.代码规范
+
+- .prettierrc
+
+```json
+{
+  "eslintIntegration": true,
+  "stylelintIntegration": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "none"
+}
+
+```
+
+- 安装eslint
+
+<https://typescript-eslint.nodejs.cn/getting-started/>
+
+```bash
+eslint --init
+```
+
+eslint.config.js
+
+- globals 全局变量，window,document
+- eslint-plugin-vue
+- @eslint/compat 兼容性
+- @eslint/js
+- typescript-eslint ts检测
+
+```js
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
+import { fixupConfigRules } from '@eslint/compat';
+
+export default [
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...fixupConfigRules(pluginVue.configs['flat/essential']),
+  {
+    files: ['**/*.{js,mjs,cjs,ts,vue}'], 
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off'
+    },
+    ignores: ['**/*.d.{ts}'],
+    languageOptions: {
+      parserOptions: {
+        parser: '@typescript-eslint/parser'
+      },
+      globals:globals.browser
+    }
+  }
+];
+
+```
+
+ .eslintrc
+<https://eslint.vuejs.org/user-guide/>
+
+- @typescript-eslint/eslint-plugin
+- @typescript-eslint/parser
+- eslint-plugin-vue
+- vue-eslint-parser
+
+```json
+{
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  }
+}
+```
+
+- 提交规范
+
+husky在git hooks提交前执行代码检查，测试之类的
+
+commitizen cz-conventional-changelog 命令行提示提交代码规范
+
+lint-staged 代码检查成功才staged
+
+```bash
+pnpm add -D husky commitizen cz-conventional-changelog conventional-changelog-cli
+
+pnpm husky init
+
+git commit -m <type>[optional scope]: <description>
+
+# 交互式提交代码
+cz
+
+# 生成changlog
+conventional-changelog -p angular -i CHANGELOG.md -s
+
+```
+
+packages.json的husky和cz配置
+
+```json
+ "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
+```

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="item.name" v-for="item in allComps"></component>
+    <component :is="item.name" :key="item.name" v-for="item in allComps"></component>
   </div>
 </template>
 
