@@ -175,9 +175,7 @@ export default config;
 <https://juejin.cn/post/7129667747134308389>
 
 需要安装的库
-@vue/test-utils@next
-happy-dom
-vitest
+
 
 用于测试报告
 @vitest/ui

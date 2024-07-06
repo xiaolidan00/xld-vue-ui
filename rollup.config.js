@@ -9,19 +9,21 @@ import babel from '@rollup/plugin-babel';
 import scss from 'rollup-plugin-scss';
 const plugins = [
   typescript({ tsconfig: './tsconfig.json' }),
+  //babel转译
   babel({
-    exclude: 'node_modules/**' // 只转译我们的源代码
+    exclude: 'node_modules/**'
   }),
-
   commonjs(),
   resolve(),
+  //处理vue组件
   vue({
     css: true,
     compileTemplate: true
   })
 ];
 export default [
-  {
+//打包vue组件
+  {//外部引入vue
     external: ['vue'],
     input: 'src/index.ts',
     output: [
@@ -30,7 +32,7 @@ export default [
     ],
     plugins: [
       ...plugins,
-
+    //样式文件处理
       scss(),
       postcss({
         extensions: ['.css', '.scss'],
@@ -42,6 +44,7 @@ export default [
       })
     ]
   },
+  //打包d.ts文件
   {
     input: 'src/index.ts',
     ouput: {
@@ -49,6 +52,7 @@ export default [
       format: 'esm'
     },
     plugins: [...plugins, dts()],
+    //注意vue里面有样式style会作为其中模块，一定要添加external去除
     external: [/\.(css|scss)$/]
   }
 ];

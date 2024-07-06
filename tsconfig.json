@@ -2,8 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "preserve",
+    "module": "ESNext",   
     "moduleResolution": "Node",
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
@@ -14,10 +13,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
+    "jsx": "preserve",
     "lib": ["ESNext", "DOM"]
   },
   "extends": "@vue/tsconfig/tsconfig.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["src/**/*.stories.ts", "src/examples/"],
+  "exclude": ["src/**/*.stories.ts", "src/examples/","src/**/*.test.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
