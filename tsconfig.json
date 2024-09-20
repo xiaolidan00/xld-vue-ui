@@ -16,7 +16,7 @@
     "jsx": "preserve",
     "lib": ["ESNext", "DOM"]
   },
-  "extends": "@vue/tsconfig/tsconfig.json",
+  "extends": ["@vue/tsconfig/tsconfig.json"],
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types.d.ts", "types.d.ts"],
   "exclude": ["src/**/*.stories.ts", "src/examples/","src/**/*.test.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

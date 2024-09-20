@@ -35,7 +35,7 @@
     "@xiaolidan00:register": "https://npm.pkg.github.com/xiaolidan"
   },
   "keywords": [
-    "react"
+    "vue"
   ],
   "author": "xiaolidan00",
   "repository": "https://github.com/xiaolidan00/xld-vue-ui",
@@ -85,11 +85,11 @@
     "vite": "^5.3.3",
     "vite-plugin-sass": "^0.1.0",
     "vitest": "^1.6.0",
-    "vue": "^3.4.31",
+    "vue": "^3.5.6",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.0.24"
   },
   "peerDependencies": {
-    "react": "^18.3.1"
+    "vue": "^3.5.6"
   }
 }
